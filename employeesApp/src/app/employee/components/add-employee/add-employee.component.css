@@ -1,0 +1,12 @@
+.container-fluid{
+    width: 100vh;
+}
+
+button{
+    width: 30vh;
+}
+
+input, select{
+    margin-bottom: 1%;
+}
+  

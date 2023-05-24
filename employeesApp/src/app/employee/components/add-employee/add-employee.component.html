@@ -1,0 +1,47 @@
+<div class="container-fluid">
+    <div class="alert alert-warning" role="alert" *ngIf="response !== ''">
+        {{response}}
+    </div>
+
+    <div class="card">
+        <h5 class="card-title text-muted m-2">
+            Formulario Empleado
+        </h5>
+        <div class="card-body">
+            <form [formGroup]="form" (ngSubmit)="saveEmployee()" novalidate>
+                <div class="form-group">
+                    <label for="name">Nombre</label>
+                    <input type="text" formControlName="name" name="name" class="form-control" id="name"
+                        placeholder="Nombres">
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Apellidos</label>
+                    <input type="text" formControlName="lastName" name="lastName" class="form-control"
+                        id="lastName" placeholder="Apellidos">
+                </div>
+
+                <div class="form-group">
+                    <label for="document">Numero de documento</label>
+                    <input type="text" formControlName="document" name="document" class="form-control"
+                        id="document" placeholder="Numero de documento">
+                </div>
+                <div class="form-group">
+
+                    <label for="role">Cargo</label>
+
+                    <select formControlName="role" name="role" class="form-control mb-3" id="role">
+                        <option value="T">Profesor</option>
+                        <option value="S">Estudiante</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="birth">Fecha de nacimiento</label>
+                    <input type="date" formControlName="birthday" name="birthday" class="form-control" id="birth">
+                </div>
+
+                <button type="submit" class="btn btn-primary mt-3">Guardar</button>
+            </form>
+        </div>
+    </div>
+
+</div>

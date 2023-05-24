@@ -1,0 +1,67 @@
+<div class="container-fluid">
+    <div class="card">
+        <h5 class="card-title text-muted m-2">
+            Filtrar empleados
+        </h5>
+        <div class="card-body">
+        <form (ngSubmit)="getEmployees()" #formTemplate="ngForm" >
+                <div class="form-group">
+                    
+                    <label for="role"><h3>Cargo</h3></label>
+                    
+                    <select [(ngModel)]="role" name="role" class="form-control mb-3" id="role">
+                        <option value="T">Profesor</option>
+                        <option value="S">Estudiante</option>
+                    </select>
+                </div>
+    
+            <button type="submit" class="btn btn-primary">Buscar</button>
+        </form>
+
+    </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+
+        <hr />
+
+        <div *ngIf="employees.length > 0;then with_data else without_data">
+            isValid;then content else other_content
+        </div>
+
+    </div>
+</div>
+
+
+<ng-template #with_data>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Id Empleado</th>
+                <th scope="col">Numero Documento</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Apellidos</th>
+                <th scope="col">Fecha Nacimiento</th>
+                <th scope="col">Cargo</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let employee of employees">
+                <th scope="row">{{employee.id}}</th>
+                <td>{{employee.document}}</td>
+                <td>{{employee.name}}</td>
+                <td>{{employee.lastName}}</td>
+                <td>{{employee.birthday}}</td>
+                <td>
+                    <span *ngIf="employee.role === 'T'">Profesor</span>
+                    <span *ngIf="employee.role !== 'T'">Estudiante</span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</ng-template>
+
+<ng-template #without_data>
+    <h2 *ngIf="firstSearch !== true">Ups! parece que aun no tienes registros para el rol seleccionado</h2>
+</ng-template>

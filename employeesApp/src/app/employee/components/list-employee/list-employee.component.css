@@ -1,0 +1,15 @@
+.abs-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 47vh;
+}
+
+.container-fluid{
+    width: 100vh;
+}
+
+button{
+    width: 30vh;;
+}
+  
