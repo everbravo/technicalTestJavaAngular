@@ -1,6 +1,10 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {
+  HttpClientTestingModule
+} from '@angular/common/http/testing';
 
 import { AddEmployeeComponent } from './add-employee.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 describe('AddEmployeeComponent', () => {
   let component: AddEmployeeComponent;
@@ -8,7 +12,8 @@ describe('AddEmployeeComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AddEmployeeComponent ]
+      declarations: [ AddEmployeeComponent ],
+      imports:[HttpClientTestingModule, ReactiveFormsModule, FormsModule]
     })
     .compileComponents();
 
@@ -19,5 +24,5 @@ describe('AddEmployeeComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
-  });
+  }); 
 });
