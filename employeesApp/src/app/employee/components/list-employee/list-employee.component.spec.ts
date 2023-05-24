@@ -28,4 +28,29 @@ describe('ListEmployeeComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should listEmployee', () => {
+    fixture = TestBed.createComponent(ListEmployeeComponent);
+    component = fixture.componentInstance;
+
+    expect(component.getEmployees()).toBeUndefined();
+  });
+
+  it('text should be equals to "T"', () => {
+    const fixture = TestBed.createComponent(ListEmployeeComponent);
+    const app = fixture.componentInstance;
+    expect(app.role).toEqual('T');
+  });
+
+  it('firstSearch should be equals to "true"', () => {
+    const fixture = TestBed.createComponent(ListEmployeeComponent);
+    const app = fixture.componentInstance;
+    expect(app.firstSearch).toEqual(true);
+  });
+
+  it('employees should be equals to "[]"', () => {
+    const fixture = TestBed.createComponent(ListEmployeeComponent);
+    const app = fixture.componentInstance;
+    expect(app.employees).toEqual([]);
+  });
 });

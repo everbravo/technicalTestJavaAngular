@@ -30,7 +30,6 @@ export class AddEmployeeComponent {
     birthday:['']
   });
 
-
   public response: string = "";
 
   saveEmployee(): void{

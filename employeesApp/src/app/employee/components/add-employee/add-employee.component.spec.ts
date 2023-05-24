@@ -25,4 +25,11 @@ describe('AddEmployeeComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   }); 
+
+  it('should saveEmployee', () => {
+    fixture = TestBed.createComponent(AddEmployeeComponent);
+    component = fixture.componentInstance;
+    component.form.setValue = component.formEmpty.value;
+    expect(component.saveEmployee()).toBeUndefined();
+  });
 });
